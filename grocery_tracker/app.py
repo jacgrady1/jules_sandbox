@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///grocery_inventory.db'
+# NOTE: Update this path for your PythonAnywhere environment!
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/YourUserName/your_project_directory/grocery_inventory.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
