@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit Item - Grocery Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Edit Item: {{ item.name }}</h1>
+
+    <form action="{{ url_for('update_item', item_id=item.id) }}" method="post">
+        Name: <input type="text" name="name" value="{{ item.name }}" required><br>
+        Quantity: <input type="number" name="quantity" value="{{ item.quantity }}" required><br>
+        Target Quantity: <input type="number" name="target_quantity" value="{{ item.target_quantity }}" required><br>
+        Unit: <input type="text" name="unit" value="{{ item.unit }}"><br>
+        <button type="submit">Update Item</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index_page') }}">Back to Inventory</a>
+  </body>
+</html>

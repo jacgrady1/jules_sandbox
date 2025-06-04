@@ -1,0 +1,140 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li .item-details {
+    flex-grow: 1;
+}
+
+li .item-actions a,
+li .item-actions button {
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+li .item-actions a {
+    background-color: #5bc0de;
+    color: white;
+    border-color: #46b8da;
+}
+li .item-actions a:hover {
+    background-color: #31b0d5;
+}
+
+li .item-actions button {
+    background-color: #d9534f;
+    color: white;
+    border-color: #d43f3a;
+}
+li .item-actions button:hover {
+    background-color: #c9302c;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="datetime-local"] {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Utility classes */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    color: #337ab7;
+}
+
+a:hover {
+    color: #23527c;
+}
+
+/* Adjustments for index.html list structure */
+li span { /* For item details */
+    margin-right: 10px;
+}
+
+/* Edit page specific */
+body > h1 { /* Center H1 on edit page too */
+    text-align: center;
+}
+
+body > form { /* Specific to edit page form if it's direct child of body */
+    margin-top: 20px;
+}
+
+body > a { /* 'Back to inventory' link */
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 4px;
+}
+body > a:hover {
+    background-color: #5a6268;
+}

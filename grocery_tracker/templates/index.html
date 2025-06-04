@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Grocery Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>{{ message }}</h1>
+
+      <h2>Add New Item</h2>
+      <form action="{{ url_for('add_item') }}" method="post">
+          Name: <input type="text" name="name" required><br>
+          Quantity: <input type="number" name="quantity" value="1" min="0" required><br>
+          Target Quantity: <input type="number" name="target_quantity" value="1" min="0" required><br>
+          Unit: <input type="text" name="unit" value="pcs"><br>
+          <button type="submit">Add Item</button>
+      </form>
+
+      <h2>Current Inventory</h2>
+      <ul>
+        {% for item in items %}
+          <li>
+            <div class="item-details">
+              <strong>{{ item.name }}</strong> ({{ item.quantity }} / {{ item.target_quantity }} {{ item.unit }})
+              <br><small>Added: {{ item.date_added.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <div class="item-actions">
+              <a href="{{ url_for('edit_item_page', item_id=item.id) }}">Edit</a>
+              <form action="{{ url_for('delete_item', item_id=item.id) }}" method="post" style="display: inline;">
+                <button type="submit">Delete</button>
+              </form>
+            </div>
+          </li>
+        {% else %}
+          <li>No items in inventory yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
